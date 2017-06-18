@@ -50,10 +50,13 @@ function parseCommit(commit) {
 }
 
 function getCommits() {
-	var revCommits = data.split('commit');
-	revCommits = revCommits.slice(1);
+	var revCommits = data.split('\ncommit');
+	console.log(revCommits);
+	//revCommits = revCommits.slice(1);
+	console.log(revCommits);
 	var commits = []
 	revCommits.forEach( commit => commits.unshift(commit.trim()));
+	console.log(commits);
 	return commits;
 }
 
@@ -99,7 +102,7 @@ var myTemplateConfig = {
 		font: 'normal 12pt Arial'
   },
   commit: {
-    spacingY: -50,
+    spacingY: 30,
     dot: {
       size: 10
     },
@@ -126,7 +129,7 @@ var myTemplate = new GitGraph.Template( myTemplateConfig );
 
 var gitGraph = new GitGraph({
 	template: myTemplate,
-	orientation: 'vertical-reverse',
+	orientation: 'horizontal',
 	mode: 'compact'
 });
 
@@ -157,7 +160,7 @@ function nodeBuilder(node) {
 function buildGraph() {
 
 	commits = getCommits();
-	//console.log(commits);
+	console.log(commits);
 	commits = commits.map(parseCommit);
 	//console.log(commits);
 

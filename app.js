@@ -2,8 +2,8 @@ var util = require('util');
 var exec = require('child_process').exec;
 var express = require('express');
 
-var gitFolder = ''
-var gitCommand = 'git log --stat --decorate --source --all';
+var gitFolder = '/home/adam/work/wrs-website'
+var gitCommand = 'git log --stat --decorate --source --all --pretty=short';
 
 var output = {data: '', dir: gitFolder, error: ''};
 
