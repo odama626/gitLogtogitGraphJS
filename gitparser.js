@@ -91,7 +91,7 @@ var refs = {};
 var hashMap = {}; // maps commits to branches
 
 var myTemplateConfig = {
-  colors: [ "#008FB5", "#979797"], // branches colors, 1 per column
+  //colors: [ "#008FB5", "#979797"], // branches colors, 1 per column
   branch: {
     lineWidth: 8,
     spacingX: 50,
