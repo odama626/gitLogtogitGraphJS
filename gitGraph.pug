@@ -1,0 +1,23 @@
+script(src='https://cdnjs.cloudflare.com/ajax/libs/gitgraph.js/1.11.3/gitgraph.min.js')
+link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/gitgraph.js/1.11.3/gitgraph.min.css')
+link(rel='stylesheet', href='/gitParse.min.css')
+canvas(id="gitGraph") Parsing #{dir}
+
+div #{error}
+
+script.
+	var data = `!{data}`
+	
+script(src='/gitparser.js')
+	
+//script.
+	var gitgraph = new GitGraph({
+		template: 'metro',
+		orientation: 'horizontal',
+		mode: 'compact'
+	});
+	
+	var master = gitgraph.branch('master');
+	
+	gitgraph.commit('initial commit');
+	

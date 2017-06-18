@@ -1,0 +1,31 @@
+$gap: 15px;
+
+.commit-info {
+	text-align: left;
+	.author {
+		padding: $gap;
+	}
+	.branch {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+	.message {
+		padding: $gap;
+	}
+	.summary {
+		padding: $gap;
+		.line {
+			padding-bottom: $gap/2;
+			display: flex;
+			justify-content: space-between;
+			.filename { }
+			.changes {
+				padding-right: $gap;
+				.count { font-weight: bold; }
+				.insertions { color: green; }
+				.deletions { color: red; }
+			}
+		}
+	}
+}
